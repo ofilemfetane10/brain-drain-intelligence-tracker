@@ -5,15 +5,11 @@ Interactive intelligence platform tracking physician and nurse emigration flows 
 
 ![Next.js](https://img.shields.io/badge/Next.js-14-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue) ![Recharts](https://img.shields.io/badge/Recharts-2.10-green)
 
----
-
 ## What This Is
 
 A policy-grade dashboard mapping the structural haemorrhage of trained health workers from Africa to Europe — quantifying emigration rates, migration corridors, EU reception data, and composite drain indices across 15 AU member states.
 
 The dashboard connects two health system crises in a single analytical frame: African workforce deficits and European dependency on foreign-trained professionals.
-
----
 
 ## Data Sources
 
@@ -27,17 +23,13 @@ The dashboard connects two health system crises in a single analytical frame: Af
 | EU Directive 2013/55/EU | Professional qualifications recognition flows |
 | NHS Digital Workforce Statistics 2022 | UK-specific foreign-trained physician data |
 
----
-
 ## Key Metrics
 
 - **Brain Drain Index**: Composite 0–100 score weighting emigration rate, workforce density deficit, annual net loss, and trajectory
 - **Emigration Rate**: Estimated % of domestically-trained physicians currently working abroad
 - **Migration Corridors**: Origin–destination pairs with estimated physician stock and specialty breakdown
 - **EU Reception Analysis**: African-origin physician share of total foreign-trained workforce by EU member state
-
----
-
+- 
 ## Quick Start
 
 ```bash
@@ -45,7 +37,6 @@ git clone https://github.com/au-health-intelligence/brain-drain-intelligence-tra
 cd brain-drain-intelligence-tracker
 npm install
 npm run dev
-```
 
 Open [http://localhost:3000](http://localhost:3000)
 
@@ -55,8 +46,6 @@ cd C:\Users\YourName\Downloads\brain-drain-intelligence-tracker
 npm install
 npm run dev
 ```
-
----
 
 ## Architecture
 
@@ -68,13 +57,9 @@ npm run dev
 
 Data is embedded in `/app/api/data/route.ts`. In a production WHO or AU Commission environment, this route connects to WHO NHWA API, World Bank DataBank, and OECD.Stat SDMX feeds.
 
----
-
 ## Aesthetic
 
 Dark cartographic — void black backgrounds, amber data highlights, migration flow lines, gridded surface. Designed to feel like field intelligence rather than institutional reporting.
-
----
 
 ## Coverage
 
@@ -83,8 +68,6 @@ Dark cartographic — void black backgrounds, amber data highlights, migration f
 - **EU Receiving Countries**: 8
 - **Reference Year**: 2022
 
----
-
 ## Author
 
 **Ofile Mfetane** — Health systems data analyst and developer based in Botswana.
@@ -92,7 +75,6 @@ Building applied analytics tools for African and European public health and poli
 
 [LinkedIn](https://linkedin.com/in/ofile-mfetane) · [Medium](https://medium.com/@ofilemfetane) · [GitHub](https://github.com/eu-health-intelligence)
 
----
 
 ## Licence
 
