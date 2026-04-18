@@ -29,7 +29,7 @@ The dashboard connects two health system crises in a single analytical frame: Af
 - **Emigration Rate**: Estimated % of domestically-trained physicians currently working abroad
 - **Migration Corridors**: Origin–destination pairs with estimated physician stock and specialty breakdown
 - **EU Reception Analysis**: African-origin physician share of total foreign-trained workforce by EU member state
-- 
+
 ## Quick Start
 
 ```bash
