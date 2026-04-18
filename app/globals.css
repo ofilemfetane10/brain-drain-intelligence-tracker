@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-void: #040608;
+  --bg-deep: #080d12;
+  --bg-surface: #0d1520;
+  --bg-card: #111d2e;
+  --bg-elevated: #162538;
+
+  --accent-amber: #f5a623;
+  --accent-amber-dim: #c4831a;
+  --accent-red: #e84040;
+  --accent-teal: #1ab8a0;
+  --accent-blue: #2d7dd2;
+
+  --text-primary: #e8edf2;
+  --text-secondary: #8fa3b8;
+  --text-muted: #4a6278;
+  --text-mono: #7ecba1;
+
+  --border-subtle: #1a2d42;
+  --border-mid: #243d56;
+
+  --flow-africa: #e84040;
+  --flow-eu: #2d7dd2;
+  --flow-bridge: #f5a623;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-void);
+  color: var(--text-primary);
+  font-family: 'Syne', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(229,68,68,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(45,125,210,0.05) 0%, transparent 60%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(26,45,66,0.15) 40px,
+      rgba(26,45,66,0.15) 41px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(26,45,66,0.15) 40px,
+      rgba(26,45,66,0.15) 41px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mono { font-family: 'Space Mono', monospace; }
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+}
+
+.card-elevated {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-mid);
+  border-radius: 2px;
+}
+
+.stat-number {
+  font-family: 'Space Mono', monospace;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.flow-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.flow-line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-amber), transparent);
+  animation: flowRight 3s linear infinite;
+}
+
+@keyframes flowRight {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+.pulse-red {
+  animation: pulseRed 2s ease-in-out infinite;
+}
+
+@keyframes pulseRed {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232,64,64,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(232,64,64,0); }
+}
+
+.tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+.tag-critical {
+  background: rgba(232,64,64,0.15);
+  color: var(--accent-red);
+  border: 1px solid rgba(232,64,64,0.3);
+}
+
+.tag-warning {
+  background: rgba(245,166,35,0.15);
+  color: var(--accent-amber);
+  border: 1px solid rgba(245,166,35,0.3);
+}
+
+.tag-stable {
+  background: rgba(26,184,160,0.15);
+  color: var(--accent-teal);
+  border: 1px solid rgba(26,184,160,0.3);
+}
+
+.corridor-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-red), var(--accent-amber));
+  border-radius: 2px;
+  transition: width 0.8s ease;
+}
+
+.section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.amber-glow {
+  text-shadow: 0 0 20px rgba(245,166,35,0.4);
+}
+
+.number-display {
+  font-family: 'Space Mono', monospace;
+  color: var(--accent-amber);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: reveal 0.6s ease forwards;
+}
+
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-void); }
+::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 2px; }
